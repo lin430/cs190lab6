@@ -68,7 +68,6 @@ You should have your git username and email set up from last week, if you get an
 4. Have your partner clone this repository onto their machine.
 5. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing.
 
-
 ### Bug Fixes
 
 Before we get started on the bug fix, we don't know how many commits or how long this will be, so lets make our own branch.
@@ -158,3 +157,40 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```
  
 16. Now lets wait for our partner to finish up and continue on to "Wrap-up"
+
+### New Features
+
+While your partner is fixing bugs, we're going to add some new features to this program!
+
+If you run it with no arguments, like this
+
+  ```bash
+  ruby text_mutator.rb
+  ```
+
+We'll see a message showing us how to use the program.
+
+  ```
+  #example output
+  Usage: ruby text_mutator.rb [--reverse --upper --lower --upsidedown] <input text>
+  ```
+
+So lets run it with the following input
+
+  ```bash
+  ruby text_mutator.rb --upper scott
+  ```
+
+And we'll see our output
+
+  ```bash
+  ttocs
+  ```
+
+Lets add some new options.
+
+We'll need to make modifications in the switch case (lines 15 through 28)
+
+and we'll need to add our own modification method (lines 36 through 50)
+
+
