@@ -10,7 +10,7 @@ Last weeks lab can be found [here](http://github.com/scottopell/cs190lab5) if yo
 This is another partner lab, so buddy up!
 
 ## What You'll Learn
-By the end of this lab, you'll be able to create, use, and merge.
+By the end of this lab, you'll be able to create, use, and merge branches.
 
 ## Setup ##
 
@@ -36,16 +36,18 @@ Depending on your working environment, perform the appropriate action:
 
 You should have your git username and email set up from last week, if you get any messages about missing them, refer to last weeks lab.
 
+The command below will set your `git push` action to an appropriate default. 
 
-   ```bash
-   git config --global push.default simple
-   ```
+```bash
+git config --global push.default simple
+```
 
-  And we'll set our default editor (just for today's lab) to be gedit for merge messages
+This command sets your default editor (just for today's lab) to be gedit for merge messages.
 
-  ```bash
-  export EDITOR="gedit"
-  ```
+```bash
+export EDITOR="gedit"
+```
+> This only lasts as long as the terminal window you ran it within. As soon as you close the window, this setting is lost.
  
 ### Setting up your repository. 
 #### Do WITH your partner on ONE computer
@@ -83,24 +85,24 @@ You should have your git username and email set up from last week, if you get an
   cd <repository_name>
   ```
 
-7. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
+7. Decide which one of you wants to debug, and which wants to add a new feature. Proceed to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
 
 ### Bug Fixes
 
-Before we get started on the bug fix, we don't know how many commits or how long this will be, so lets make our own branch.
+1. Lets make our own branch,since we don't know how many commits or how long this will be.
 
   ```bash
   git branch bug-fixes
   git checkout bug-fixes
   ```
 
-So, you have your repository with a fresh version of `text_mutator.rb` If you run it, like so
+2. So, you have your repository with a fresh version of `text_mutator.rb` If you run it, like so
 
   ```bash
   ruby text_mutator.rb --reverse Hello World
   ```
 
-You'll notice that you get an output that's reversed, but it only reverses the first word. This isn't very much fun. Lets fix it.
+  You'll notice that you get an output that's reversed, but it only reverses the first word. This isn't very much fun. Lets fix it.
 
 1. Open up `text_mutator.rb` in your editor of choice and look through the code.
 2. You can see that to get the input text (from line 12)
@@ -108,7 +110,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```ruby
   text = ARGV[1]
   ```
-   > That line just gets the second word after `text_mutator.rb`
+   > This code just gets the second argument after `text_mutator.rb`, which in our case is 'Hello'.
    
 3. Instead of that, lets prompt the user for input.
 
@@ -116,8 +118,8 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 
 4. So instead of getting the data from text from the command line arguments, we can use `$stdin.gets.chomp` to prompt for input
 
+  > `stdin` refers to the user input from the terminal
   > `gets` stands for `get string`
-  
   > `chomp` gets rid of the trailing newline (don't worry about this for now)
 
 5. Line 12 should now be
@@ -126,11 +128,13 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   text = $stdin.gets.chomp
   ```
 
-6. We should probably tell the user whats happening, so add a line above this that says
+6. We should probably tell the user whats happening, so add a line ABOVE the line above that says
 
   ```ruby
   puts "Input some text, please"
   ```
+  > This means that the line with `puts` should come before the line with `gets`.
+
 
 7. Now save this, exit, and run the program again.
 
@@ -159,8 +163,13 @@ You'll notice that you get an output that's reversed, but it only reverses the f
  
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
 
-12. So we can log onto github and see our branch!
-13. And we like our changes, so lets merge them back into master
+12. Log onto github and look at our new branch!
+
+  ![Branch](http://i.imgur.com/pxjHgWo.png)
+  
+  > To view different branches, click on the button surrounded in red above.
+
+13. We like our changes, so lets merge them back into master
 
   ```bash
   git checkout master
@@ -169,7 +178,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 
 14. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
 
-You may also get a popup in gedit here, simply save and quit gedit.
+  You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
@@ -181,7 +190,7 @@ You may also get a popup in gedit here, simply save and quit gedit.
 
 While your partner is fixing bugs, we're going to add some new features to this program!
 
-Before we get started on these though, we don't know how many commits or how long this will be, so lets make our own branch.
+1. Lets make our own branch,since we don't know how many commits or how long this will be.
 
   ```bash
   git branch new-features
@@ -189,53 +198,53 @@ Before we get started on these though, we don't know how many commits or how lon
   ```
 
 
-If you run it with no arguments, like this
+2. Run the program wiith no arguments, like this, like this
 
   ```bash
   ruby text_mutator.rb
   ```
 
-We'll see a message showing us how to use the program.
+  We'll see a message showing us how to use the program.
 
   ```
   Usage: ruby text_mutator.rb [--reverse --upper --lower] <input text>
   ```
 
-So lets run it with the following input
+3. So lets run it with the following input
 
   ```bash
   ruby text_mutator.rb --upper scott
   ```
 
-And we'll see our output
-
+  And we'll see our output
+  
   ```bash
   SCOTT
   ```
 
-We want to add an option to to invert the case of the string, so our goal is to be able to do the following
-
+  We want to add an option to to invert the case of the string, so our goal is to be able to do the following
+  
   ```bash
   # THIS WILL NOT WORK YET
   # we need to follow the steps below before this will work
   ruby text_mutator.rb --swapcase heLlO
   ```
-
+  
   output
-
+  
   ```
   HElLo
   ```
 
-The easiest change to make is to add `--swapcase` to the `usage` string. Change line 4 to match the following
+4. The easiest change to make is to add `--swapcase` to the `usage` string. Change line 4 to match the following
 
    ```ruby
   puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --swapcase] <input text>"
    ```
  
-The next change we'll make is in the case statement
+**The next change we'll make is in the case statement**
 
-1. Add these lines under line 21, in the same format as the ones above, to add support for the `--swapcase` flag
+1. Add these lines under line 21, in the same format as the lines above, to add support for the `--swapcase` flag
 
   ```ruby
   when "--swapcase"
@@ -262,7 +271,7 @@ The next change we'll make is in the case statement
   HeLlo
   ```
 
-Now everything is working, and we like our changes, so lets commit them.
+  **Now everything is working, and we like our changes, so lets commit them.**
 
 4. Let's `add` our changes to git
 
@@ -273,7 +282,7 @@ Now everything is working, and we like our changes, so lets commit them.
 5. `commit` these changes
 
   ```bash
-  git commit -m 'fixes bug with text input, changes source from argv to user input'
+  git commit -m 'add swapcase option'
   ```
  
 6. Now lets push our changes to the remote 
@@ -284,7 +293,12 @@ Now everything is working, and we like our changes, so lets commit them.
  
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
 
-7. So we can log onto github and see our branch!
+7. Log onto github and look at our new branch!
+
+  ![Branch](http://i.imgur.com/pxjHgWo.png)
+  
+  > To view different branches, click on the button surrounded in red above.
+
 8. And we like our changes, so lets merge them back into master
 
   ```bash
@@ -297,14 +311,11 @@ Now everything is working, and we like our changes, so lets commit them.
 
 9. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
 
-You may also get a popup in gedit here, simply save and quit gedit.
+  You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
   ```
-
-
- 
 
 Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
 
