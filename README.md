@@ -40,11 +40,17 @@ You should have your git username and email set up from last week, if you get an
    ```bash
    git config --global push.default simple
    ```
+
+  And we'll set our default editor (just for today's lab) to be gedit for merge messages
+
+  ```bash
+  export EDITOR="gedit"
+  ```
  
 ### Setting up your repository. 
 #### Do WITH your partner on ONE computer
 
-1. Create a new repository on github and add your partner as a collaborator
+1. Create a new repository on github and add your partner as a collaborator  **Don't skip this**
 2. Make and go into a directory in your home directory for this lab. The path should look something like `~/cs190lab6`
 
   > Use `mkdir` and `cd` for this
@@ -66,6 +72,11 @@ You should have your git username and email set up from last week, if you get an
   ```
  
 5. Have your partner clone this repository onto their machine.
+
+  ```bash
+  git clone <url_from_partner>
+  ```
+
 6. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
 
 ### Bug Fixes
@@ -101,12 +112,12 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 
   > `gets` stands for `get string`
   
-  > `chomp()` gets rid of the trailing newline (don't worry about this for now)
+  > `chomp` gets rid of the trailing newline (don't worry about this for now)
 
 5. Line 12 should now be
 
   ```ruby
-  text = gets.chomps()
+  text = $stdin.gets.chomp
   ```
 
 6. We should probably tell the user whats happening, so add a line above this that says
@@ -118,7 +129,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 7. Now save this, exit, and run the program again.
 
   ```bash
-  ruby text_mutator.rb --reverse
+  ruby text_mutator.rb
   ```
 
 8. Now we should be prompted for input, so type in some text and it should output it as expected!
@@ -179,7 +190,6 @@ If you run it with no arguments, like this
 We'll see a message showing us how to use the program.
 
   ```
-  #example output
   Usage: ruby text_mutator.rb [--reverse --upper --lower] <input text>
   ```
 
@@ -192,32 +202,37 @@ So lets run it with the following input
 And we'll see our output
 
   ```bash
-  ttocs
+  SCOTT
   ```
 
 We want to add an option to to invert the case of the string, so our goal is to be able to do the following
 
   ```bash
   ruby text_mutator.rb --swapcase heLlO
-    >>HElLo
   ```
 
-The easiest change is to add `--swapcase` to the `usage` string. Change line 4 to match the following
+  output
+
+  ```
+  HElLo
+  ```
+
+The easiest change to make is to add `--swapcase` to the `usage` string. Change line 4 to match the following
 
    ```ruby
   puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --swapcase] <input text>"
    ```
  
-The first code change we need to make is in the case statement
+The next change we'll make is in the case statement
 
-1. Add these lines under line 23, in the same format as the ones above, to add support for the `--swapcase` flag
+1. Add these lines under line 21, in the same format as the ones above, to add support for the `--swapcase` flag
 
   ```ruby
   when "--swapcase"
     mod_text = swapcase_mod text
   ```
 
-2. Now that we've added a call to the method `swapcase_mod`, we need to create that method. We can do this by inserting these lines under line 51.
+2. Now that we've added a call to the method `swapcase_mod`, we need to create that method. We can do this by inserting these lines under line 46.
 
   ```ruby
   def swapcase_mod input
@@ -267,6 +282,9 @@ Now everything is working, and we like our changes, so lets commit them.
   git merge new-features
   ```
 
+  > Note: you might get a merge message here (it will open in gedit), if you do, simply save the file and quit
+  > If you get a strange message about something not being successfull, call over a TA
+
 9. And lets push our changes up to the remote
 
   ```bash
@@ -274,6 +292,8 @@ Now everything is working, and we like our changes, so lets commit them.
   ```
  
 
-
-
 Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
+
+### Wrap-up
+
+So now, if we both pull down the latest version of master, we can see that our 
