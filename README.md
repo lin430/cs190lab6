@@ -45,17 +45,17 @@ You should have your git username and email set up from last week, if you get an
 #### Do WITH your partner on ONE computer
 
 1. Create a new repository on github and add your partner as a collaborator
-1. Make and go into a directory for this lab. The path for me would be `~/sopell/cs190lab6`
+2. Make and go into a directory in your home directory for this lab. The path should look something like `~/cs190lab6`
 
   > Use `mkdir` and `cd` for this
 
-2. Download `text_mutator.rb` into this directory.
+3. Download `text_mutator.rb` into this directory.
 
   ```bash
   wget https://github.com/scottopell/cs190lab6/raw/master/text_mutator.rb
   ```
  
-3. Initialize a repo, add, commit, and push this file.
+4. Initialize a repo, add, commit, and push this file.
 
   ```bash
   git init
@@ -65,8 +65,8 @@ You should have your git username and email set up from last week, if you get an
   git push -u origin master
   ```
  
-4. Have your partner clone this repository onto their machine.
-5. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing.
+5. Have your partner clone this repository onto their machine.
+6. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
 
 ### Bug Fixes
 
@@ -91,19 +91,19 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```ruby
   text = ARGV[1]
   ```
-
-3. So that line just gets the second(because of 0-based indexing) argument after `text_mutator.rb`
+   > That line just gets the second word after `text_mutator.rb`
+   
 4. Instead of that, lets prompt the user for input.
 
   > Since you guys (probably) don't know ruby, we'll give you most of the code
 
 5. So instead of getting the data from text from the command line arguments, we can use `gets.chomp()`
 
-  > `gets` stands for get string
+  > `gets` stands for `get string`
   
   > `chomp()` gets rid of the trailing newline (don't worry about this for now)
 
-6. So line 12 should now be
+6. Line 12 should now be
 
   ```ruby
   text = gets.chomps()
@@ -122,7 +122,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```
 
 9. Now we should be prompted for input, so type in some text and it should output it as expected!
-10. Lets `add` our changes
+10. Let's `add` our changes
 
   ```bash
   git add text_mutator.rb
