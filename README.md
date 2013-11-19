@@ -108,7 +108,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 
   > Since you guys (probably) don't know ruby, we'll give you most of the code
 
-4. So instead of getting the data from text from the command line arguments, we can use `gets.chomp()`
+4. So instead of getting the data from text from the command line arguments, we can use `$stdin.gets.chomp` to prompt for input
 
   > `gets` stands for `get string`
   
@@ -129,7 +129,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 7. Now save this, exit, and run the program again.
 
   ```bash
-  ruby text_mutator.rb
+  ruby text_mutator.rb --reverse
   ```
 
 8. Now we should be prompted for input, so type in some text and it should output it as expected!
@@ -161,7 +161,9 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   git merge bug-fixes
   ```
 
-14. And lets push our changes up to the remote
+14. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
+
+You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
@@ -269,7 +271,7 @@ Now everything is working, and we like our changes, so lets commit them.
 6. Now lets push our changes to the remote 
 
   ```bash
-  git push -u origin bug-fixes
+  git push -u origin new-features
   ```
  
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
@@ -285,15 +287,23 @@ Now everything is working, and we like our changes, so lets commit them.
   > Note: you might get a merge message here (it will open in gedit), if you do, simply save the file and quit
   > If you get a strange message about something not being successfull, call over a TA
 
-9. And lets push our changes up to the remote
+9. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
+
+You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
   ```
+
+
  
 
 Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
 
 ### Wrap-up
 
-So now, if we both pull down the latest version of master, we can see that our 
+So now, if we both pull down the latest version of master, we can see that the changes made in both branches are there, and we can input from a user prompt, and we can use the swapcase function, all without any merge conflicts!
+
+For grading, open up your repository on github, and navigate to the network tab on the right (same as last week)
+
+Ask the TA about anything you might be unclear on
