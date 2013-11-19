@@ -40,19 +40,21 @@ You should have your git username and email set up from last week, if you get an
    ```bash
    git config --global push.default simple
    ```
-   
+ 
 ### Setting up your repository. 
 #### Do WITH your partner on ONE computer
 
 1. Create a new repository on github and add your partner as a collaborator
 1. Make and go into a directory for this lab. The path for me would be `~/sopell/cs190lab6`
+
   > Use `mkdir` and `cd` for this
+
 2. Download `text_mutator.rb` into this directory.
 
   ```bash
   wget https://github.com/scottopell/cs190lab6/raw/master/text_mutator.rb
   ```
-  
+ 
 3. Initialize a repo, add, commit, and push this file.
 
   ```bash
@@ -62,7 +64,7 @@ You should have your git username and email set up from last week, if you get an
   git remote add origin <github_url>
   git push -u origin master
   ```
-  
+ 
 4. Have your partner clone this repository onto their machine.
 5. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing.
 
@@ -76,7 +78,7 @@ Before we get started on the bug fix, we don't know how many commits or how long
   git checkout bug-fixes
   ```
 
-So, you have your repository with a fresh version of text_mutator.rb. If you run it, like so
+So, you have your repository with a fresh version of `text_mutator.rb` If you run it, like so
 
   ```bash
   ruby text_mutator.rb --reverse Hello World
@@ -84,13 +86,13 @@ So, you have your repository with a fresh version of text_mutator.rb. If you run
 
 You'll notice that you get an output that's reversed, but it only reverses the first word. This isn't very much fun. Lets fix it.
 
-1. Open up text_mutator.rb in your editor of choice and look through the code.
+1. Open up `text_mutator.rb` in your editor of choice and look through the code.
 2. You can see that to get the input text (from line 12)
 
   ```ruby
   text = ARGV[1]
   ```
-  
+
 3. So that line just gets the second(because of 0-based indexing) argument after `text_mutator.rb`
 4. Instead of that, lets prompt the user for input.
 
@@ -119,25 +121,26 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```bash
   ruby text_mutator.rb --reverse
   ```
+
 9. Now we should be prompted for input, so type in some text and it should output it as expected!
 10. Lets `add` our changes
 
   ```bash
   git add text_mutator.rb
   ```
-  
+ 
 11. `commit` these changes
 
   ```bash
   git commit -m 'fixes bug with text input, changes source from argv to user input'
   ```
-  
+ 
 12. Now lets push our changes to the remote 
 
   ```bash
   git push -u origin bug-fixes
   ```
-  
+ 
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
 
 13. So we can log onto github and see our branch!
@@ -147,11 +150,11 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   git checkout master
   git merge bug-fixes
   ```
-  
+
 15. And lets push our changes up to the remote
 
   ```bash
   git push
   ```
-  
+ 
 16. Now lets wait for our partner to finish up and continue on to "Wrap-up"
