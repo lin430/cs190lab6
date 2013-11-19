@@ -10,7 +10,7 @@ Last weeks lab can be found [here](http://github.com/scottopell/cs190lab5) if yo
 This is another partner lab, so buddy up!
 
 ## What You'll Learn
-By the end of this lab, you'll be able to creat, use, merge and delete (local) branches.
+By the end of this lab, you'll be able to create, use, and merge.
 
 ## Setup ##
 
