@@ -93,48 +93,48 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```
    > That line just gets the second word after `text_mutator.rb`
    
-4. Instead of that, lets prompt the user for input.
+3. Instead of that, lets prompt the user for input.
 
   > Since you guys (probably) don't know ruby, we'll give you most of the code
 
-5. So instead of getting the data from text from the command line arguments, we can use `gets.chomp()`
+4. So instead of getting the data from text from the command line arguments, we can use `gets.chomp()`
 
   > `gets` stands for `get string`
   
   > `chomp()` gets rid of the trailing newline (don't worry about this for now)
 
-6. Line 12 should now be
+5. Line 12 should now be
 
   ```ruby
   text = gets.chomps()
   ```
 
-7. We should probably tell the user whats happening, so add a line above this that says
+6. We should probably tell the user whats happening, so add a line above this that says
 
   ```ruby
   puts "Input some text, please"
   ```
 
-8. Now save this, exit, and run the program again.
+7. Now save this, exit, and run the program again.
 
   ```bash
   ruby text_mutator.rb --reverse
   ```
 
-9. Now we should be prompted for input, so type in some text and it should output it as expected!
-10. Let's `add` our changes
+8. Now we should be prompted for input, so type in some text and it should output it as expected!
+9. Let's `add` our changes
 
   ```bash
   git add text_mutator.rb
   ```
  
-11. `commit` these changes
+10. `commit` these changes
 
   ```bash
   git commit -m 'fixes bug with text input, changes source from argv to user input'
   ```
  
-12. Now lets push our changes to the remote 
+11. Now lets push our changes to the remote 
 
   ```bash
   git push -u origin bug-fixes
@@ -142,21 +142,21 @@ You'll notice that you get an output that's reversed, but it only reverses the f
  
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
 
-13. So we can log onto github and see our branch!
-14. And we like our changes, so lets merge them back into master
+12. So we can log onto github and see our branch!
+13. And we like our changes, so lets merge them back into master
 
   ```bash
   git checkout master
   git merge bug-fixes
   ```
 
-15. And lets push our changes up to the remote
+14. And lets push our changes up to the remote
 
   ```bash
   git push
   ```
  
-16. Now lets wait for our partner to finish up and continue on to "Wrap-up"
+15. Now lets wait for our partner to finish up and continue on to "Wrap-up"
 
 ### New Features
 
@@ -187,10 +187,19 @@ And we'll see our output
   ttocs
   ```
 
-Lets add some new options.
+1. Lets add a new option, where the case of the input is swapped
 
-We'll need to make modifications in the switch case (lines 15 through 28)
+2. First let's simply add our text modification to the `usage` string.
 
-and we'll need to add our own modification method (lines 36 through 50)
+   ```ruby
+   #todo
+   ```
+   
+3. Now we need to add our own case-swapping modification method (lines 36 through 50)
+   
+   
+
+4. We'll need to make modifications in the switch case (lines 15 through 28)
+
 
 
