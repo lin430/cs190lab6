@@ -11,6 +11,7 @@ def main
   # store input text into text variable
   text = ARGV[1]
 
+  # modify text accordingly
   case modification
   when "--reverse"
     mod_text = reverse_mod(text)
