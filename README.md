@@ -77,7 +77,13 @@ You should have your git username and email set up from last week, if you get an
   git clone <url_from_partner>
   ```
 
-6. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
+6. The partner that just cloned this repository will also need to `cd` into the repository that the `clone` just created.
+
+  ```bash
+  cd <repository_name>
+  ```
+
+7. Decide which one of you wants to debug, and which wants to add a new feature. Procede to either "Bug Fixes" or "New Features" depending on which one you're doing. DO NOT DO BOTH, EACH PARTNER DOES ONE!!
 
 ### Bug Fixes
 
@@ -210,6 +216,8 @@ And we'll see our output
 We want to add an option to to invert the case of the string, so our goal is to be able to do the following
 
   ```bash
+  # THIS WILL NOT WORK YET
+  # we need to follow the steps below before this will work
   ruby text_mutator.rb --swapcase heLlO
   ```
 
