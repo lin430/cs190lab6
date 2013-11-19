@@ -12,15 +12,11 @@ def main
   text = ARGV[1]
 
   # modify text accordingly
-  case modification
-  when "--reverse"
-    mod_text = reverse_mod(text)
-  when "--upper"
-    mod_text = upper_mod(text)
-  when "--lower"
-    mod_text = lower_mod(text)
-  when "--upsidedown"
-    mod_text = upsidedown_mod(text)
+  # methods supported
+  methods = %w(reverse upper lower upsidedown)
+  methods = methods.map { |meth| meth = "--#{meth}" }
+  if methods.include? modification
+    mod_text = send(modification.gsub("--","") + "_mod", text)
   else
     puts "ERROR: Unrecognized modifier!"
     exit
