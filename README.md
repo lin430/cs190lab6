@@ -339,6 +339,6 @@ Now just wait for your partner to finish up theres and then continue on to "Wrap
 
 So now, if we both pull down the latest version of master, we can see that the changes made in both branches are there, and we can input from a user prompt, and we can use the swapcase function, all without any merge conflicts!
 
-For grading, open up your repository on github, and navigate to the network tab on the right (same as last week)
+For grading, open up your repository on github, and navigate to the `Network` tab on the right (same as last week)
 
 Ask the TA about anything you might be unclear on
