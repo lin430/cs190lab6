@@ -1,6 +1,6 @@
 def main
   # check the number of commandline arguments
-  if(ARGV.length < 2)
+  if(ARGV.length < 1)
     puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --upsidedown] <input text>"
     exit
   end
@@ -45,7 +45,9 @@ def lower_mod(input)
 end
 
 def upsidedown_mod(input)
-  #TODO
+  return input.tr(
+    letters = 'ahbmfnjpdrutwqye',
+    letters.reverse).reverse
 end
 
 # Call main method
