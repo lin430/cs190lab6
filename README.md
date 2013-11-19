@@ -135,27 +135,33 @@ export EDITOR="gedit"
   ```
   > This means that the line with `puts` should come before the line with `gets`.
 
+7. And we should also remove the `<text>` from the `usage` string. Change line 4 to match the following
 
-7. Now save this, exit, and run the program again.
+   ```ruby
+  puts "Usage: ruby text_mutator.rb [--reverse --upper --lower ]"
+   ```
+ 
+
+8. Now save this, exit, and run the program again.
 
   ```bash
   ruby text_mutator.rb --reverse
   ```
 
 8. Now we should be prompted for input, so type in some text and it should output it as expected!
-9. Let's `add` our changes to git
+10. Let's `add` our changes to git
 
   ```bash
   git add text_mutator.rb
   ```
  
-10. `commit` these changes
+11. `commit` these changes
 
   ```bash
   git commit -m 'fixes bug with text input, changes source from argv to user input'
   ```
  
-11. Now lets push our changes to the remote 
+12. Now lets push our changes to the remote 
 
   ```bash
   git push -u origin bug-fixes
@@ -163,20 +169,20 @@ export EDITOR="gedit"
  
   > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
 
-12. Log onto github and look at our new branch!
+13. Log onto github and look at our new branch!
 
   ![Branch](http://i.imgur.com/pxjHgWo.png)
   
   > To view different branches, click on the button surrounded in red above.
 
-13. We like our changes, so lets merge them back into master
+14. We like our changes, so lets merge them back into master
 
   ```bash
   git checkout master
   git merge bug-fixes
   ```
 
-14. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
+15. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
 
   You may also get a popup in gedit here, simply save and quit gedit.
 
@@ -184,7 +190,7 @@ export EDITOR="gedit"
   git push
   ```
  
-15. Now lets wait for our partner to finish up and continue on to "Wrap-up"
+16. Now lets wait for our partner to finish up and continue on to "Wrap-up"
 
 ### New Features
 
