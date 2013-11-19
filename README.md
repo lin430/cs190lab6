@@ -325,13 +325,16 @@ While your partner is fixing bugs, we're going to add some new features to this 
   > Note: you might get a merge message here (it will open in gedit), if you do, simply save the file and quit
   > If you get a strange message about something not being successfull, call over a TA
 
-9. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
-
-  You may also get a popup in gedit here, simply save and quit gedit.
-
+9. Push your changes to the remote repository.
+  
   ```bash
   git push
   ```
+
+  > NOTE: You may get an error here, you need to `pull` your partner's latest changes
+
+  > You may also get a popup in gedit here, simply save and quit gedit.
+
 
 Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
 
