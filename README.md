@@ -193,4 +193,40 @@ We'll need to make modifications in the switch case (lines 15 through 28)
 
 and we'll need to add our own modification method (lines 36 through 50)
 
+We want to add an option to to invert the case of the string, so our goal is to be able to do the following
 
+  ```bash
+  ruby text_mutator.rb --swapcase heLlO
+    >>HElLo
+  ```
+
+First thing we need to change is the switch case
+
+1. Add these lines under line 23, in the same format as the ones above, to add support for the `--swapcase` flag
+
+  ```ruby
+  when "--swapcase"
+    mod_text = swapcase_mod text
+  ```
+
+2. Now that we've added a call to the method `swapcase_mod`, we need to create that method. We can do this by inserting these lines under line 51.
+
+  ```ruby
+  def swapcase_mod input
+    input.swapcase
+  end
+  ```
+
+3. That's it! Now we can save this, exit, and try running it with our new method like this.
+
+  ```bash
+  ruby text_mutator.rb --swapcase hElLo
+  ```
+
+  And hopefully we'll see this output
+
+  ```
+  HeLlo
+  ```
+
+Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
