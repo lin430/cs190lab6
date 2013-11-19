@@ -172,7 +172,7 @@ export EDITOR="gedit"
 
 14. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
 
-You may also get a popup in gedit here, simply save and quit gedit.
+  You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
@@ -263,7 +263,7 @@ While your partner is fixing bugs, we're going to add some new features to this 
   HeLlo
   ```
 
-Now everything is working, and we like our changes, so lets commit them.
+  **Now everything is working, and we like our changes, so lets commit them.**
 
 4. Let's `add` our changes to git
 
@@ -303,7 +303,7 @@ Now everything is working, and we like our changes, so lets commit them.
 
 9. And lets push our changes up to the remote. NOTE: You may get an error here, you simply need to `pull` your partner's latest changes
 
-You may also get a popup in gedit here, simply save and quit gedit.
+  You may also get a popup in gedit here, simply save and quit gedit.
 
   ```bash
   git push
