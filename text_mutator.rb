@@ -1,7 +1,7 @@
 def main
   # check the number of commandline arguments
   if(ARGV.length < 1)
-    puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --upsidedown] <input text>"
+    puts "Usage: ruby text_mutator.rb [--reverse --upper --lower] <input text>"
     exit
   end
   
@@ -14,13 +14,11 @@ def main
   # modify text accordingly
   case modification
   when "--reverse"
-    mod_text = reverse_mod(text)
+    mod_text = reverse_mod text
   when "--upper"
-    mod_text = upper_mod(text)
+    mod_text = upper_mod text
   when "--lower"
-    mod_text = lower_mod(text)
-  when "--upsidedown"
-    mod_text = upsidedown_mod(text)
+    mod_text = lower_mod text
   else
     puts "ERROR: Unrecognized modifier!"
     exit
@@ -32,23 +30,17 @@ end
 
 ############ Modification methods ##############
 
-def reverse_mod(input)
-  return input.reverse
+def reverse_mod input 
+  input.reverse
 end
 
-def upper_mod(input)
-  return input.upcase
+def upper_mod input
+  input.upcase
 end
 
-def lower_mod(input)
-  return input.lower
-end
-
-def upsidedown_mod(input)
-  return input.tr(
-    letters = 'ahbmfnjpdrutwqye',
-    letters.reverse).reverse
+def lower_mod input
+  input.downcase
 end
 
 # Call main method
-main()
+main

@@ -172,7 +172,7 @@ We'll see a message showing us how to use the program.
 
   ```
   #example output
-  Usage: ruby text_mutator.rb [--reverse --upper --lower --upsidedown] <input text>
+  Usage: ruby text_mutator.rb [--reverse --upper --lower] <input text>
   ```
 
 So lets run it with the following input
