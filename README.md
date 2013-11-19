@@ -53,6 +53,21 @@ export EDITOR="gedit"
 #### Do WITH your partner on ONE computer
 
 1. Create a new repository on github and add your partner as a collaborator  **Don't skip this**
+  
+  Just a reminder on how to do that
+  
+  > Creating a repo
+ 
+  > ![*Creating a Repo*](http://i.imgur.com/01vKjfU.jpg) 
+
+  > Go to the repo settings
+
+  > ![*Go to the repo's settings*](http://i.imgur.com/LCQdeWv.jpg)
+
+  > Add your partner as a collaborator
+
+  > ![Add your partner](http://i.imgur.com/KEPd3ja.jpg)
+
 2. Make and go into a directory in your home directory for this lab. The path should look something like `~/cs190lab6`
 
   > Use `mkdir` and `cd` for this
