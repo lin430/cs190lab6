@@ -187,21 +187,7 @@ And we'll see our output
   ttocs
   ```
 
-1. Lets add a new option, where the case of the input is swapped
-
-2. First let's simply add our text modification to the `usage` string.
-
-   ```ruby
-   #todo
-   ```
-   
-3. Now we need to add our own case-swapping modification method (lines 36 through 50)
-   
-   
-
-4. We'll need to make modifications in the switch case (lines 15 through 28)
-
-
+  
 We want to add an option to to invert the case of the string, so our goal is to be able to do the following
 
   ```bash
@@ -209,7 +195,13 @@ We want to add an option to to invert the case of the string, so our goal is to 
     >>HElLo
   ```
 
-First thing we need to change is the switch case
+The easiest change is to add `--swapcase` to the `usage` string. Change line 4 to match the following
+
+   ```ruby
+  puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --swapcase] <input text>"
+   ```
+ 
+The first code change we need to make is in the case statement
 
 1. Add these lines under line 23, in the same format as the ones above, to add support for the `--swapcase` flag
 
