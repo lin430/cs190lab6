@@ -213,7 +213,7 @@ While your partner is fixing bugs, we're going to add some new features to this 
   ```
 
 
-2. Run the program wiith no arguments, like this, like this
+2. Run the program with no arguments, like this, like this
 
   ```bash
   ruby text_mutator.rb
@@ -250,14 +250,15 @@ While your partner is fixing bugs, we're going to add some new features to this 
   ```
   HElLo
   ```
+  
+4. Open text_mutator.rb in your favorite code editor.
+
 
 4. The easiest change to make is to add `--swapcase` to the `usage` string. Change line 4 to match the following
 
    ```ruby
   puts "Usage: ruby text_mutator.rb [--reverse --upper --lower --swapcase] <input text>"
    ```
- 
-**The next change we'll make is in the case statement**
 
 1. Add these lines under line 21, in the same format as the lines above, to add support for the `--swapcase` flag
 
