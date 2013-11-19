@@ -21,7 +21,6 @@ def main
     mod_text = lower_mod(text)
   when "--upsidedown"
     mod_text = upsidedown_mod(text)
-    puts 4
   else
     puts "ERROR: Unrecognized modifier!"
     exit
