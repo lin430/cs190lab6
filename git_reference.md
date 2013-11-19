@@ -67,86 +67,50 @@ This is a reference guide for the git commands that we've gone over in lecture a
   git push
   ```
 
-### Most of the Important Commands
+### Creating and Merging a Branch
 
-Download an existing repository
+1. Create a branch
+  
+  ```bash
+  git branch <branch name>
+  
+  # ex.
+  git branch multiplayer-feature
+  ```
+  ---
 
-```bash
-git clone <url here> <location here>
+2. Checkout(Switch to) a branch
 
-# ex.
-git clone https://github.com/scottopell/cs190lab5.git ~/cs190lab5
-```
+  ```bash
+  git checkout <branch name>
+  
+  # ex.
+  git checkout multiplayer-feature
+  ```
+  ---
+  
+3. Add changes and commit to a branch (same as regular)
 
----
-Push commits to a remote branch
+  ```bash
+  git add <filename(s)>
+  git commit -m "<message here>"
+  
+  # ex.
+  git add game.rb
+  git commit -m "Made changes to the gameplay handler"
+  ```
+  ---
+  
+4. Merge a branch
 
-```bash
-git push
-```
-
----
-
-Pull latest commits from remote branch
-
-```bash
-git pull
-```
-
----
-Check status of repository
-
-```bash
-git status
-```
-
----
-Check log of recent commits
-
-```bash
-git log
-
-# OR, for a simpler view
-git log pretty=oneline
-```
-
----
-To remove a file from the staging area
-
-> This will unstage the given file, meaning when you do `git commit`, the changes to this file will NOT be included
-
-> You will only ever need to do this if you accidentally `add` a file
-
-```bash
-git rm --cached <filename>
-```
-
----
-Commit latest changes with a short message
-
-```bash
-git commit -m "<message here>"
-
-# ex. 
-git commit -m "initial commit"
-```
-
----
-Add all files in current directory
-
-```bash
-git add .
-```
-
----
-Add changes to _tracked_ files to the staging area AND commit them
-
-```bash
-git commit -am "<message here>"
-
-# ex.
-git commit -am "fixes bug #4"
-```
+  ```bash
+  git checkout <merge destination branch>
+  git merge <merging branch>
+  
+  # ex.
+  git checkout master
+  git merge multiplayer-feature
+  ```
 
 ### Troubleshooting
 
