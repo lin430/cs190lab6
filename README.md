@@ -122,7 +122,7 @@ You'll notice that you get an output that's reversed, but it only reverses the f
   ```
 
 8. Now we should be prompted for input, so type in some text and it should output it as expected!
-9. Let's `add` our changes
+9. Let's `add` our changes to git
 
   ```bash
   git add text_mutator.rb
@@ -162,6 +162,14 @@ You'll notice that you get an output that's reversed, but it only reverses the f
 
 While your partner is fixing bugs, we're going to add some new features to this program!
 
+Before we get started on these though, we don't know how many commits or how long this will be, so lets make our own branch.
+
+  ```bash
+  git branch new-features
+  git checkout new-features
+  ```
+
+
 If you run it with no arguments, like this
 
   ```bash
@@ -187,7 +195,6 @@ And we'll see our output
   ttocs
   ```
 
-  
 We want to add an option to to invert the case of the string, so our goal is to be able to do the following
 
   ```bash
@@ -229,5 +236,44 @@ The first code change we need to make is in the case statement
   ```
   HeLlo
   ```
+
+Now everything is working, and we like our changes, so lets commit them.
+
+4. Let's `add` our changes to git
+
+  ```bash
+  git add text_mutator.rb
+  ```
+ 
+5. `commit` these changes
+
+  ```bash
+  git commit -m 'fixes bug with text input, changes source from argv to user input'
+  ```
+ 
+6. Now lets push our changes to the remote 
+
+  ```bash
+  git push -u origin bug-fixes
+  ```
+ 
+  > Note, its our first push on this branch, so we want to use `-u`, and we're pushing to the remote named `origin` and our branch is named `bug-fixes` 
+
+7. So we can log onto github and see our branch!
+8. And we like our changes, so lets merge them back into master
+
+  ```bash
+  git checkout master
+  git merge new-features
+  ```
+
+9. And lets push our changes up to the remote
+
+  ```bash
+  git push
+  ```
+ 
+
+
 
 Now just wait for your partner to finish up theres and then continue on to "Wrap-up"
